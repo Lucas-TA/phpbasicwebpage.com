@@ -1,7 +1,7 @@
 <?php require_once('../../../private/init.php'); ?>
 
 <?php
-    $id = $_GET['id'] ?? '1'; // PHP > 7.0
+    $id = $_GET['id'] ?? '1';
     ?>
 
     <?php $page_title = 'Show Page'; ?>

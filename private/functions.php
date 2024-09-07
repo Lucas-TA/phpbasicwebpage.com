@@ -19,3 +19,20 @@
     {
         return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
     }
+
+    function error404()
+    {
+        header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+        exit();
+    }
+
+    function error500()
+    {
+        header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
+        exit();
+    }
+    function redirectTo($location)
+    {
+        header("Location: " . urlFor($location));
+        exit();
+    }

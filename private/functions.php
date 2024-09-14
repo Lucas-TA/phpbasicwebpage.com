@@ -48,36 +48,3 @@ function urlFor($script_path): string
     {
         return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
-    function extracted(): void
-    {
-        if (isset($_GET["subjects"]))
-        {
-            if (isPostRequest()) {
-                $menu_name = $_POST['menu_name'] ?? '';
-                $position = $_POST['position'] ?? '';
-                $visible = $_POST['visible'] ?? '';
-
-                echo "Form parameters<br />";
-                echo "Menu name: " . $menu_name . "<br />";
-                echo "Position: " . $position . "<br />";
-                echo "Visible: " . $visible . "<br />";
-            } else {
-                redirectTo(urlFor('/staff/subjects/new.php'));
-            }
-        } elseif (isset($_GET["pages"])) {
-            if (isPostRequest()) {
-                $page_name = $_POST['page_name'] ?? '';
-                $position = $_POST['position'] ?? '';
-                $visible = $_POST['visible'] ?? '';
-
-                echo "Form parameters<br />";
-                echo "Menu name: " . $page_name . "<br />";
-                echo "Position: " . $position . "<br />";
-                echo "Visible: " . $visible . "<br />";
-            } else {
-                redirectTo(urlFor('/staff/pages/new.php'));
-            }
-        }
-
-
-    }

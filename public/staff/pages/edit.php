@@ -10,7 +10,18 @@ $page_name = '';
 $position = '';
 $visible = '';
 
-extracted();
+if (isPostRequest()) {
+    $page_name = $_POST['page_name'] ?? '';
+    $position = $_POST['position'] ?? '';
+    $visible = $_POST['visible'] ?? '';
+
+    echo "Form parameters<br />";
+    echo "Menu name: " . $page_name . "<br />";
+    echo "Position: " . $position . "<br />";
+    echo "Visible: " . $visible . "<br />";
+} else {
+    redirectTo(urlFor('/staff/pages/new.php'));
+}
 ?>
 
 <?php $page_title = 'Edit Page'; ?>
